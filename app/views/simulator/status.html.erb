@@ -1,0 +1,31 @@
+<h1>Car Simulator Status</h1>
+<h2>Make: <%= @car.make %>; Model Year: <%= @car.model_year %></h2>
+<p id="description">Description: <%= @car.description %></p>
+
+# form for the toggle lights button
+<form action="/simulator/togglelights" method="get">
+  <input type="submit" value="<%= @car.light_status ? 'On' : 'Off' %>"/>
+</form>
+
+<h2 id="speed">Current Speed: <%= @car.get_speed%>mph</h2>
+
+# form for accelerate button
+<form action="/simulator/speedup" method="get">
+  <input type="submit" value="Accelerate"/>
+</form>
+
+# form for the brake button
+<form action="/simulator/slowdown" method="get">
+  <input type="submit" value="Brake"/>
+</form>
+
+# Form for the parking brake radio buttons and submit button
+<form action="/simulator/parkingbrake" method="get">
+  <input type="radio" name="parking_brake" value="On" id="On"/>
+  On<br/>
+  <input type="radio" name="parking_brake" value="Off" id="Off"/>
+  Off
+  <br/>
+  <br/>
+  <button type="submit" class="btn btn-default btn-lg">Set Parking Brake</button>
+</form>
